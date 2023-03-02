@@ -7,6 +7,7 @@ import { JoinMealsIngredients } from "../../utils/joinMealsIngredients";
 import { filteredByDietary } from "../../utils/filteredByDietary";
 import { GrClose } from "react-icons/gr";
 import { Link } from "react-router-dom";
+import Loader from "../Loader";
 
 const FilterModal = ({ isShowing, hide }: { isShowing: boolean, hide: any }) => {
   const [selectedFilterOptions, setSelectedFilterOptions] = useState<any[]>([]);
@@ -22,7 +23,7 @@ const FilterModal = ({ isShowing, hide }: { isShowing: boolean, hide: any }) => 
   }
 
   if (status === "loading") {
-    return <span>...</span>;
+    return <span><Loader size={2}/></span>;
   }
 
   if (status === "error") {

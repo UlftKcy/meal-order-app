@@ -13,8 +13,8 @@ function App() {
     <Routes>
       <Route path="/" element={<Layout />}>
         <Route index element={<Welcome />} />
-        <Route path="menu" element={<Suspense fallback={<Loader />}><Menu /></Suspense>} />
-        <Route path="menu/:id" element={<Suspense fallback={<Loader />}><Meal /></Suspense>} />
+        <Route path="menu" element={<Suspense fallback={<Loader size={6}/>}><Menu /></Suspense>} />
+        <Route path="menu/:id" element={<Suspense fallback={<Loader  size={6}/>}><Meal /></Suspense>} />
         <Route path="*" element={<NotFound />} />
       </Route>
     </Routes>
