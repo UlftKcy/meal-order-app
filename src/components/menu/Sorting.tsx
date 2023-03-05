@@ -13,7 +13,7 @@ const Sorting = ({ options, setSortOption }: { options: string[], setSortOption:
     return (
         <div className='relative'> 
             <button onClick={() => setDropdownShow(!dropdownShow)} className='text-lg tracking-wide mb-1 flex items-center'>Sort By {dropdownShow ? <IconContext.Provider value={{ className: "ml-3 w-6 h-6" }}><RiArrowUpSLine /></IconContext.Provider> : <IconContext.Provider value={{ className: "ml-3 w-6 h-6" }}><RiArrowDownSLine /></IconContext.Provider>}</button>
-            {dropdownShow && <div className='absolute left-0 inset-x-0 rounded-md bg-slate-100 drop-shadow-lg divide-y divide-solid'>
+            {dropdownShow && <div className='absolute left-0 inset-x-0 rounded-md ring-1 ring-orange-300 bg-white drop-shadow-lg divide-y divide-solid'>
                 {Object.values(options).map((option: string, key: any) => (
                     <button key={key} onClick={() => handleSortOption(option)} className='hover:text-slate-500 w-full text-right tracking-widest px-4 py-2'>{option}</button>
                 ))}

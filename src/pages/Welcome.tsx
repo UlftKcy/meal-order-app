@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { Fragment, useRef } from 'react';
 import { motion, useInView, useTime, useTransform } from "framer-motion";
 import MealImg from "../assets/meal.jpg";
 import { Link } from 'react-router-dom';
@@ -10,7 +10,7 @@ const Welcome = () => {
   const rotate = useTransform(time, [0, 9000], [0, 360], { clamp: false });
 
   return (
-    <div className='flex justify-around items-center p-5 h-1/2 my-20 sm:my-40'>
+    <div className="m-auto min-h-full flex justify-around items-center">
       <div ref={headerRef}>
         <div
           style={{

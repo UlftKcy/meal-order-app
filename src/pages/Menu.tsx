@@ -15,7 +15,7 @@ const Menu = () => {
   const { status, data, error }: UseQueryResult<Meals[] | any, Error> = useQuery('meals', fetchMeals)
 
   if (status === 'loading') {
-    return <span><Loader size={48}/></span>
+    return <span><Loader size={48} /></span>
   }
 
   if (status === 'error') {
@@ -27,7 +27,7 @@ const Menu = () => {
 
   return (
     <div className="relative">
-      <div className="flex flex-col sm:flex-row justify-between items-center flex-wrap sticky top-0 py-2 sm:py-7 border-b border-b-slate-300 sm:px-28 z-50 mb-3 bg-white">
+      <div className="flex flex-col sm:flex-row md:justify-end justify-center items-center flex-wrap sticky top-0 z-50 mb-5 py-3 bg-white">
         <div className="flex items-center sm:justify-end justify-center mt-5 sm:mt-0">
           <button onClick={toggle}
             className="text-lg mb-1 mr-10 hover:text-slate-600 hover:underline underline-offset-4"
@@ -38,12 +38,10 @@ const Menu = () => {
           <Sorting options={options} setSortOption={setSortOption} />
         </div>
       </div>
-      <div className="w-full">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-20 w-fit p-0 sm:p-5 mx-auto">
-          {React.Children.toArray(
-            sortedMeals?.map((meal: Meals) => <CardMenu {...meal} />)
-          )}
-        </div>
+      <div className="grid auto-rows-auto grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-20 w-fit p-0 sm:p-5 mx-auto">
+        {React.Children.toArray(
+          sortedMeals?.map((meal: Meals) => <CardMenu {...meal} />)
+        )}
       </div>
     </div>
   );
