@@ -1,11 +1,13 @@
 import React, { SyntheticEvent, useCallback, useMemo, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { Meals } from "../types/types";
 import { UseQueryResult, useQuery } from "react-query";
 import { fetchMeal } from "../service/api";
 import Loader from "../components/Loader";
 import Search from "../components/Search";
 import { searchMealByBudget } from "../utils/searchMealByBudget";
+import { IconContext } from "react-icons";
+import {BiArrowBack} from "react-icons/bi";
 
 const Meal = () => {
   let { id } = useParams<{ id: any }>();
@@ -106,6 +108,7 @@ const Meal = () => {
 
   return (
     <div className="sm:w-2/3 py-3 px-6 mx-auto mt-5">
+      <Link to="/menu" className="flex items-center text-slate-700 hover:text-slate-500 mb-3"><IconContext.Provider value={{ className: "mr-2" }}><BiArrowBack/></IconContext.Provider>Menu</Link>
       <div className="flex justify-between items-center flex-wrap mb-5">
         <h4 className="text-lg uppercase text-orange-400 font-bold tracking-wider">
           {data?.name}
