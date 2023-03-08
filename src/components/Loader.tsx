@@ -1,5 +1,3 @@
-import React from "react";
-
 const Loader = ({size}:{size:number}) => {
   return (
     <div className="container mx-auto mt-20 flex justify-center">
