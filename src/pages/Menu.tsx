@@ -23,7 +23,7 @@ const Menu = () => {
   }
 
   // sorted meals
-  const sortedMeals = sortOption === "A-Z" ? data.sort((a: any, b: any) => a.name.toLowerCase() > b.name.toLowerCase() ? 1 : -1) : data.sort((a: any, b: any) => a.name.toLowerCase() > b.name.toLowerCase() ? -1 : 1)
+  const sortedMeals = () => sortOption === "A-Z" ? data?.sort((a: any, b: any) => a.name.toLowerCase() > b.name.toLowerCase() ? 1 : -1) : data?.sort((a: any, b: any) => a.name.toLowerCase() > b.name.toLowerCase() ? -1 : 1)
 
   return (
     <div className="relative">
