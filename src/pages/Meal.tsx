@@ -104,7 +104,7 @@ const Meal = () => {
   }
 
   // order meal
-  const handleSubmit = ()=>{
+  const handleSubmit = () => {
     toast.success("Successfully order meal !", {
       position: toast.POSITION.TOP_RIGHT
     });

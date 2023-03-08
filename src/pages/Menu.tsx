@@ -23,7 +23,11 @@ const Menu = () => {
   }
 
   // sorted meals
-  const sortedMeals = () => sortOption === "A-Z" ? data?.sort((a: any, b: any) => a.name.toLowerCase() > b.name.toLowerCase() ? 1 : -1) : data?.sort((a: any, b: any) => a.name.toLowerCase() > b.name.toLowerCase() ? -1 : 1)
+    const sortHandle = ()=>{
+      let sortingMeals = sortOption === "A-Z" ? data.sort((a: any, b: any) => a.name.toLowerCase() > b.name.toLowerCase() ? 1 : -1) : data.sort((a: any, b: any) => a.name.toLowerCase() > b.name.toLowerCase() ? -1 : 1)
+      return sortingMeals;
+    }
+    const sortedMeals = sortHandle();
 
   return (
     <div className="relative">
@@ -40,7 +44,7 @@ const Menu = () => {
       </div>
       <div className="grid auto-rows-auto grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-20 w-fit p-0 sm:p-5 mx-auto">
         {React.Children.toArray(
-          sortedMeals?.map((meal: Meals) => <CardMenu {...meal} />)
+          sortedMeals.map((meal: Meals) => <CardMenu {...meal} />)
         )}
       </div>
     </div>
