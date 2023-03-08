@@ -1,4 +1,3 @@
-// list meals types
 export interface MenuIngredients {
     name: string,
     quantity: number,
@@ -13,7 +12,6 @@ export interface FetchMealsResponse {
     data: Meals[]
 }
 
-// list ingredients types
 export interface Options {
     name: string,
     quality: string,
