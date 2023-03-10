@@ -24,7 +24,7 @@ const Menu = () => {
   }
 
   // meal sort
-  const meals = data.sort((a: any, b: any) => {
+/*   const meals = data.sort((a: any, b: any) => {
     let mealA = a.name.toLowerCase();
     let mealB = b.name.toLowerCase();
     if (sortOption === "A-Z") {
@@ -40,7 +40,7 @@ const Menu = () => {
         return 1;
       }
     }
-  });
+  }); */
 
 
   return (
@@ -58,7 +58,7 @@ const Menu = () => {
       </div>
       <div className="grid auto-rows-auto grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-20 w-fit p-0 sm:p-5 mx-auto">
         {React.Children.toArray(
-          meals.map((meal: Meals) => <CardMenu {...meal} />)
+          data.map((meal: Meals) => <CardMenu {...meal} />)
         )}
       </div>
     </div>
