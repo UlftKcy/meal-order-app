@@ -8,11 +8,12 @@ import FilterModal from "../components/menu/FilterModal";
 import { useModal } from "../hooks/useModal";
 import Loader from "../components/Loader";
 
+
 const Menu = () => {
   const options: string[] = ["A-Z", "Z-A"];
   const [sortOption, setSortOption] = useState<string>(options[0]);
   const { isShowing, toggle } = useModal();
-  const { status, data, error }: UseQueryResult<Meals[] | any, Error> = useQuery('meals', fetchMeals)
+  const { status, data, error }: UseQueryResult<Meals[] | any, Error> = useQuery('meals', fetchMeals);
 
   if (status === 'loading') {
     return <span><Loader size={48} /></span>
@@ -22,12 +23,12 @@ const Menu = () => {
     return <span>Error: {error.message}</span>
   }
 
-  // sorted meals
-    const sortHandle = ()=>{
-      let sortingMeals = sortOption === "A-Z" ? data.sort((a: any, b: any) => a.name.toLowerCase() > b.name.toLowerCase() ? 1 : -1) : data.sort((a: any, b: any) => a.name.toLowerCase() > b.name.toLowerCase() ? -1 : 1)
-      return sortingMeals;
-    }
-    const sortedMeals = sortHandle();
+  // meal sort
+  data.sort((a: any, b: any) => {
+    let mealA = a.name.toLowerCase();
+    let mealB = b.name.toLowerCase();
+    return sortOption === "A-Z" ? mealA > mealB ? 1 : -1 : mealA > mealB ? -1 : 1
+  });
 
   return (
     <div className="relative">
@@ -44,7 +45,7 @@ const Menu = () => {
       </div>
       <div className="grid auto-rows-auto grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-20 w-fit p-0 sm:p-5 mx-auto">
         {React.Children.toArray(
-          sortedMeals.map((meal: Meals) => <CardMenu {...meal} />)
+          data.map((meal: Meals) => <CardMenu {...meal} />)
         )}
       </div>
     </div>
