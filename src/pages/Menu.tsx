@@ -27,7 +27,7 @@ const Menu = () => {
   const meals =  data.sort((a: any, b: any) => {
     let mealA = a.name.toLowerCase();
     let mealB = b.name.toLowerCase();
-    return sortOption === "A-Z" ? mealA > mealB ? 1 : -1 : mealA > mealB ? -1 : 1
+    return sortOption === 'A-Z' ? mealA > mealB ? 1 : -1 : mealA > mealB ? -1 : 1
   });
   
   return (
