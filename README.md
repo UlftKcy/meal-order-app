@@ -3,7 +3,7 @@
 
 <div align="center">
   <h3>
-    <a href="https://mealorderappon.netlify.app/">
+    <a href="https://mealorderappon.netlify.app/" target="_blank">
       Project
     </a>
   </h3>
