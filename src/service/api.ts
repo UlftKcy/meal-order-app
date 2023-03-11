@@ -2,7 +2,7 @@ import axios from "axios";
 import { FetchIngredientsResponse, FetchMealsResponse, Meals } from "../types/types";
 
 const restaurantApi = axios.create({
-    baseURL: 'https://apis.career.otsimo.xyz/api/restaurant'
+    baseURL: process.env.REACT_APP_BASE_API_URL
 });
 
 export const fetchMeals = async () => {
