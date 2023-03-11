@@ -41,7 +41,7 @@
 ## How To Use
 
 # Clone this repository
-$ git clone https://github.com/UlftKcy/Ulfet-Kacay-otsimo-frontend-task-2023.git
+$ git clone https://github.com/UlftKcy/meal-order-app.git
 # Install dependencies
   $ npm install
 # Run the app
