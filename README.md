@@ -1,4 +1,14 @@
-<h1 align="center">Transparent Restaurant App</h1>
+<h1 align="center">Meal Order App</h1>
+
+
+<div align="center">
+  <h3>
+    <a href="https://mealorderappon.netlify.app/">
+      Project
+    </a>
+  </h3>
+</div>
+
 
 <!-- TABLE OF CONTENTS -->
 
@@ -31,7 +41,7 @@
 ## How To Use
 
 # Clone this repository
-$ git clone https://github.com/UlftKcy/Ulfet-Kacay-otsimo-frontend-task-2023.git
+$ git clone https://github.com/UlftKcy/meal-order-app.git
 # Install dependencies
   $ npm install
 # Run the app
